@@ -80,11 +80,15 @@ export default defineConfig({
     rehypePlugins: [responsiveTablesRehypePlugin, lazyImagesRehypePlugin],
   },
 
-  vite: {
+  vite: {    
     resolve: {
       alias: {
         '~': path.resolve(__dirname, './src'),
       },
     },
+    ssr: {
+      noExternal: ['@fontsource-variable/inter'],
+      
+    },    
   },
 });
