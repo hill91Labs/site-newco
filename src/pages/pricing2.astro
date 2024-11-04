@@ -1,0 +1,327 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Prices from '~/components/widgets/Pricing.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const metadata = {
+  title: 'Pricing 2',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText
+    tagline="Pricing 2"
+    title="Flexible Pricing for your Need"
+    subtitle="Choose the right plan that aligns with your goals."
+  />
+
+  <Content
+    Xtitle="Pricing"
+    Xsubtitle="Discover how AstroWind's versatile template serves as the ideal solution for various use cases, providing tailored solutions to drive success."
+    isReversed
+    items={[
+      {
+        title: 'Business Objects',
+        description: 'You pay only for the number of administrated bussiness objects.',
+        icon: 'tabler:carousel-horizontal',
+      },
+      {
+        title: 'Different Plans for your Need',
+        description:
+          'Based on your business, we provide different plans (primarily separated by usable business transactions).',
+        icon: 'tabler:settings',
+      },
+      {
+        title: 'Base Fee',
+        description: 'There is a base fee for each plan. This includes the general usage of the system',
+        icon: 'tabler:presentation',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1525909002-1b05e0c869d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+      alt: 'Features Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Pricing Structure</h3>
+    </Fragment>
+  </Content>
+
+  <div class="justify-center grid mb-8 pb-8 mx-auto gap-8 max-w-4xl gap-y-8 md:gap-y-12">
+    Maybe it feels a bit unusual to see already know the final prices? Buying a core insurance system (or in general b2b
+    software) means often no real visibility of the final costs during the evaluation phase. <br />
+    We stop this. Why? We like transparency - always. <br />
+    <br />
+    We shorten this processes: You can see the final prices here. Already now. No hidden costs, no surprises. <br />
+    Please find former information to our price design and our thoughts within our pricing faq.
+    <br />
+    <br />
+    <hr />
+    <h3>Business Objects (note)</h3>
+    Business object are _policies_ and _partners_ (in the future there will be also claims, commissions and reinsurances).
+    Only the main objects are counted and not their (contract) versions.
+  </div>
+
+  <!-- ** MY pricing widget ************** -->
+
+  <div class="grid grid-cols-2 gap-4 mx-auto justify-center" style="padding-left: 200px; padding-right: 200px">
+    <div>
+      <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <h1 class="justify-center">Micro2</h1>
+
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+          Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
+        </p>
+        <a
+          href="#"
+          class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+          Read more
+          <svg
+            class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 5h12m0 0L9 1m4 4L9 9"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div>blub</div>
+  </div>
+
+  <!-- Pricing Widget ******************* -->
+
+  <Prices
+    title="Our prices"
+    subtitle="Only pay for what you need"
+    prices={[
+      {
+        title: 'micro',
+        subtitle: 'Small and simple insurance products',
+        price: 4.999,
+        period: 'per month',
+        items: [
+          {
+            description: 'Full insurance product',
+          },
+          {
+            description: 'Basic business transactions',
+          },
+          {
+            description: 'Cras scelerisque accumsan lib',
+          },
+          {
+            description: 'In hac habitasse',
+          },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Get started',
+          href: '#',
+        },
+      },
+      {
+        title: 'classic',
+        subtitle: 'General and traditional insurance products',
+        price: 9.999,
+        period: 'Per Month',
+        items: [
+          {
+            description: 'Proin vel laoreet',
+          },
+          {
+            description: 'Ut efficitur habitasse egestas',
+          },
+          {
+            description: 'Volutpat hac curabitur',
+          },
+          {
+            description: 'Pellentesque blandit ut nibh',
+          },
+          {
+            description: 'Donec fringilla sem',
+          },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Get started',
+          href: '#',
+        },
+        // hasRibbon: true,
+        // ribbonTitle: 'popular',
+      },
+      {
+        title: 'special lines',
+        subtitle: 'Complex insurance products with elaborated business transactions',
+        price: '-',
+        period: 'Per Month',
+        items: [
+          {
+            description: 'Curabitur suscipit risus',
+          },
+          {
+            description: 'Aliquam habitasse malesuada',
+          },
+          {
+            description: 'Suspendisse sit amet blandit',
+          },
+          {
+            description: 'Suspendisse auctor blandit dui',
+          },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Get started',
+          href: '#',
+        },
+      },
+    ]}
+  />
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    title="Price-related features"
+    subtitle="Discover the advantages of choosing our plans"
+    columns={2}
+    items={[
+      {
+        title: 'Tiered Pricing Plans',
+        description: 'Choose from a range of pricing plans designed to accommodate different budgets and requirements.',
+        icon: 'tabler:stairs',
+      },
+      {
+        title: 'Transparent Pricing',
+        description: 'Clearly displayed pricing details for each plan, with no hidden costs or unexpected charges.',
+        icon: 'tabler:flip-vertical',
+      },
+      {
+        title: 'Secure Payment Methods',
+        description: 'Secure payment gateways to protect your financial information during transactions.',
+        icon: 'tabler:shield-lock',
+      },
+      {
+        title: 'Instant Access',
+        description: `Immediate access to your chosen plan's features and templates upon subscription.`,
+        icon: 'tabler:accessible',
+      },
+      {
+        title: 'Upgrade Value',
+        description: 'Upgrade to higher-tier plans to unlock more features and benefits for an enhanced experience.',
+        icon: 'tabler:chevrons-up',
+      },
+      {
+        title: '24H support',
+        description: 'Questions answered via live chat, email or phone, every calendar day.',
+        icon: 'tabler:headset',
+      },
+    ]}
+    classes={{ container: 'max-w-5xl' }}
+  />
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="A guided journey from plans to creativity"
+    tagline="simplified process"
+    isReversed={true}
+    items={[
+      {
+        title: 'Explore plans',
+        icon: 'tabler:number-1',
+      },
+      {
+        title: 'Select a plan',
+        icon: 'tabler:number-2',
+      },
+      {
+        title: 'Sign Up / Log In',
+        icon: 'tabler:number-3',
+      },
+      {
+        title: 'Review order',
+        icon: 'tabler:number-4',
+      },
+      {
+        title: 'Enter payment details',
+        icon: 'tabler:number-5',
+      },
+      {
+        title: 'Confirmation',
+        icon: 'tabler:number-6',
+      },
+      {
+        title: 'Download and start using the template(s)',
+        icon: 'tabler:number-7',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1536816579748-4ecb3f03d72a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      alt: 'Steps image',
+    }}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Pricing FAQs"
+    subtitle="Choosing the right plan is important, and we're here to answer your questions. If you have queries about our pricing options, you're in the right place."
+    columns={1}
+    items={[
+      {
+        title: 'Do the plans come with customer support?',
+        description:
+          'Absolutely, all plans include access to our dedicated customer support to assist you with any queries or concerns.',
+      },
+      {
+        title: 'Is there a trial period for the different plans?',
+        description:
+          "Unfortunately, we don't offer trial periods for the plans. However, you can check out our demo section to preview the quality of our templates.",
+      },
+      {
+        title: 'Can I switch between plans?',
+        description:
+          'Certainly! You can easily upgrade or downgrade your plan, at any time, to find the one that best suits your evolving requirements.',
+      },
+      {
+        title: 'What payment methods do you accept?',
+        description:
+          'We accept major credit cards and online payment methods to ensure a convenient and secure transaction process.',
+      },
+      {
+        title: 'Are there any hidden fees beyond the displayed cost?',
+        description:
+          'No, the subscription cost covers all the features and templates listed under each plan. There are no hidden fees or extra charges.',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="Ready to boost your projects?"
+    subtitle="Join our community of satisfied customers who have transformed their work with our templates."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get started now',
+        href: '/',
+      },
+    ]}
+  />
+</Layout>
