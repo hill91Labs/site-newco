@@ -26,7 +26,7 @@ jobs:
         with:
           switches: -avzr --delete
           path: dist/
-          remote_path: /var/www/docs.hill91labs.com
+          remote_path: /var/www/newco.hill91labs.com
           remote_host: hill91labs.com
           remote_port: 9122
           remote_user: shipper
