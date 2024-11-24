@@ -9,7 +9,7 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import Content from '~/components/widgets/Content.astro';
 
 const metadata = {
-  title: 'Pricing 2',
+  title: 'Pricing 3',
 };
 ---
 
@@ -17,9 +17,99 @@ const metadata = {
   <!-- HeroText Widget ******************* -->
 
   <HeroText
-    tagline="Pricing 2"
-    title="Flexible Pricing for your Need"
-    subtitle="Choose the right plan that aligns with your goals."
+    Xtagline="Pricing 3"
+    title="<small>Core Insurance with</small><br>Simple, Fair & Transparent Pricing"
+    Xsubtitle="Only pay for what you need"
+  />
+
+  <!-- Pricing Widget ******************* -->
+
+  <Prices
+    classes={{ container: 'md:py-0 lg:py-0' }}
+    Xtitle="Our prices"
+    subtitle="Our pricing is based on different plans and the number of managed business objects"
+    XsubtitleExtend="<br>Each plan contains already a number of managable business objects. For additional business objects, see the pricing table below."
+    prices={[
+      {
+        title: 'micro',
+        subtitle: 'For Micro Insurance and simple insurance products',
+        price: 5.999,
+        period: 'per month',
+        items: [
+          {
+            description: 'Optimized for a high load of business objects',
+          },
+          {
+            description: 'Includes all <i>general</i> features',
+          },
+          {
+            description: 'features<br><small>(marked with <i>*micro</i>)</small>
+            Basic business transactions<br><small>issue, correction, revoke (see details here)</small>',
+          },
+          {
+            description: 'included <strong>100,000</strong> managed busines objects',
+          },
+          {
+            description: 'For additional business objects, you pay only what you use.',
+          },
+          {
+            description:
+              'As more busines objects are managed as lower the price per object<br><small>Pricing algorithm: <code>1/log(x)</code></small>',
+          },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Get started',
+          href: '#',
+        },
+      },
+      {
+        title: 'classic',
+        subtitle: 'For classical P&C insurance products with typical busines transactions',
+        price: 9.999,
+        period: 'Per Month',
+        items: [
+          {
+            description: 'All features from Mico',
+          },
+          {
+            description: 'Extended Business Transactions including Endorsements',
+          },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Get started',
+          href: '#',
+        },
+        // hasRibbon: true,
+        // ribbonTitle: 'popular',
+      },
+      {
+        title: 'special',
+        subtitle: 'For special insurance products with custom specific business transactions',
+        price: '...',
+        period: 'Per Month',
+        items: [
+          {
+            description: 'Curabitur suscipit risus',
+          },
+          {
+            description: 'Aliquam habitasse malesuada',
+          },
+          {
+            description: 'Suspendisse sit amet blandit',
+          },
+          {
+            description: 'Suspendisse auctor blandit dui',
+          },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Get started',
+          href: '#',
+        },
+      },
+    ]}
   />
 
   <Content
@@ -90,86 +180,6 @@ const metadata = {
     </div>
     <div>blub</div>
   </div>
-
-  <!-- Pricing Widget ******************* -->
-
-  <Prices
-    title="Our prices"
-    subtitle="Only pay for what you need"
-    prices={[
-      {
-        title: 'micro',
-        subtitle: 'Small and simple insurance products',
-        price: 4.999,
-        period: 'per month',
-        items: [
-          {
-            description: 'Full insurance product',
-          },
-          {
-            description: 'Basic business transactions',
-          },
-          {
-            description: 'Cras scelerisque accumsan lib',
-          },
-          {
-            description: 'In hac habitasse',
-          },
-        ],
-        callToAction: {
-          target: '_blank',
-          text: 'Get started',
-          href: '#',
-        },
-      },
-      {
-        title: 'classic',
-        subtitle: 'General and traditional insurance products',
-        price: 9.999,
-        period: 'Per Month',
-        items: [
-          {
-            description: 'All features from Mico',
-          },
-          {
-            description: 'Extended Business Transactions including Endorsements',
-          },
-        ],
-        callToAction: {
-          target: '_blank',
-          text: 'Get started',
-          href: '#',
-        },
-        // hasRibbon: true,
-        // ribbonTitle: 'popular',
-      },
-      {
-        title: 'special lines',
-        subtitle: 'Complex insurance products with custom specific business transactions',
-        price: '-',
-        period: 'Per Month',
-        items: [
-          {
-            description: 'Curabitur suscipit risus',
-          },
-          {
-            description: 'Aliquam habitasse malesuada',
-          },
-          {
-            description: 'Suspendisse sit amet blandit',
-          },
-          {
-            description: 'Suspendisse auctor blandit dui',
-          },
-        ],
-        callToAction: {
-          target: '_blank',
-          text: 'Get started',
-          href: '#',
-        },
-      },
-    ]}
-  />
 
   <!-- FREELANCER.com -->
 

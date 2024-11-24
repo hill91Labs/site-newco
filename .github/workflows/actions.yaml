@@ -1,41 +1,33 @@
-name: GitHub Actions
+name: Build & Deploy Astro site docs.hill91labs.com
 
 on:
-  pull_request:
-    branches:
-      - main
+  # Runs on pushes targeting the default branch
   push:
-    branches:
-      - main
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version:
-          - 18
-          - 20
-          - 22
-    steps:
-      - uses: actions/checkout@v4
-      - name: Use Node.js v${{ matrix.node-version }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: npm
-      - run: npm ci
-      - run: npm run build
-      # - run: npm test
-
-  check:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Use Node.js 22
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v3
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        #with:
+        #  node-version: '16.x'
+      - name: Install npm dependencies
+        run: npm install
+      - name: Run build task
+        run: npm run build
+      - name: rsync deployments
+        uses: burnett01/rsync-deployments@7.0.1
         with:
-          node-version: 22
-          cache: npm
-      - run: npm ci
-      - run: npm run check
+          switches: -avzr --delete
+          path: dist/
+          remote_path: /var/www/docs.hill91labs.com
+          remote_host: hill91labs.com
+          remote_port: 9122
+          remote_user: shipper
+          remote_key: ${{ secrets.DEPLOY_KEY }}
