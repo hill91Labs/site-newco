@@ -1,4 +1,4 @@
-name: Build & Deploy Astro site docs.hill91labs.com
+name: Build & Deploy Astro site newco.hill91labs.com
 
 on:
   # Runs on pushes targeting the default branch
