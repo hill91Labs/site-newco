@@ -8,6 +8,11 @@ import Features3 from '~/components/widgets/Features3.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Content from '~/components/widgets/Content.astro';
 
+import pricingBlue from '~/assets/images/pricing-chart-micro-blue.png';
+import pricingDark from '~/assets/images/pricing-chart-micro-dark.png';
+
+const isDark = Astro.request.headers.get('sec-ch-prefers-color-scheme') === 'dark';
+
 const metadata = {
   title: 'Pricing 3',
 };
@@ -27,7 +32,7 @@ const metadata = {
   <Prices
     classes={{ container: 'md:py-0 lg:py-0' }}
     Xtitle="Our prices"
-    subtitle="Our pricing is based on different plans and the number of managed business objects"
+    subtitle="Pricing depends on the plan and the number of managed objects"
     XsubtitleExtend="<br>Each plan contains already a number of managable business objects. For additional business objects, see the pricing table below."
     prices={[
       {
@@ -37,23 +42,22 @@ const metadata = {
         period: 'per month',
         items: [
           {
-            description: 'Optimized for a high load of business objects',
-          },
-          {
-            description: 'Includes all <i>general</i> features',
-          },
-          {
-            description: 'All general and micro features (see docu)',
-          },
-          {
-            description: 'included <strong>100,000</strong> managed busines objects',
-          },
-          {
-            description: 'For additional business objects, you pay only what you use.',
+            description: 'Includes all available <i>general</i> features',
           },
           {
             description:
-              'As more busines objects are managed as lower the price per object<br><small>Pricing algorithm: <code>1/log(x)</code></small>',
+              'Usage of all <i>micro</i> busines transactions and features <small><br>issue, revocation, correction (<a href="#">see further details</a>)</small>',
+          },
+          {
+            description: 'Includes the management of <strong>100,000</strong> business objects',
+          },
+          {
+            description: 'Further objects are counted on a monthly basis',
+          },
+          {
+            description:
+              `The more objects are managed, the less the price per object<br><small>Pricing algorithm: <code>1/log(x)</code></small><br>` +
+              `<img src="${isDark ? pricingBlue.src : pricingDark.src}"/>`,
           },
         ],
         callToAction: {
@@ -64,15 +68,27 @@ const metadata = {
       },
       {
         title: 'classic',
-        subtitle: 'For classical P&C insurance products with typical busines transactions',
+        subtitle: 'For traditional P&C insurance products with standard business transactions',
         price: 9.999,
         period: 'Per Month',
         items: [
           {
-            description: 'All features from Mico',
+            description: 'Includes all available <i>general</i> features',
           },
           {
-            description: 'Extended Business Transactions including Endorsements',
+            description:
+              'Usage of all <i>classic</i> busines transactions and features <small><br>endorsement, renewal (<a href="#">see further details</a>)</small>',
+          },
+          {
+            description: 'Includes the management of <strong>10,000</strong> business objects',
+          },
+          {
+            description: 'Further objects are counted on a monthly basis',
+          },
+          {
+            description:
+              `The more objects are managed, the less the price per object<br><small>Pricing algorithm: <code>1/log(x)</code></small><br>` +
+              `<img src="${isDark ? pricingBlue.src : pricingDark.src}"/>`,
           },
         ],
         callToAction: {
@@ -86,7 +102,7 @@ const metadata = {
       {
         title: 'special',
         subtitle: 'For special insurance products with custom specific business transactions',
-        price: '...',
+        price: '???',
         period: 'Per Month',
         items: [
           {
